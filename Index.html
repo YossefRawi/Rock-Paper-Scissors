@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <script>
+      function computerPlay() {
+        var things = ["rock", "paper", "scissors"];
+        var thing = things[Math.floor(Math.random() * things.length)];
+        return thing;
+      }
+      function PlayRound(playerSelection, computerSelection) {
+        if (playerSelection == "rock") {
+          if (computerSelection == "paper") {
+            return "You lose paper beats rock";
+          } 
+          else if (computerSelection == "scissors") {
+            return "You win rock beats scissors";
+          } 
+          else if(computerSelection == "rock")
+          {
+            return "It's a tie";
+          }
+        } 
+        else if (playerSelection == "paper") {
+          if (computerSelection == "paper") {
+            return "It's a tie";
+          } else if (computerSelection == "scissors") {
+            return "You lose scissors beats paper";
+          } else if (computerSelection == "rock")
+          {
+            return "You win paper beats rock";
+          }
+        } 
+        else if (playerSelection == "scissors") {
+          if (computerSelection == "paper") {
+            return "You win scissors beats paper";
+          } else if (computerSelection == "scissors") {
+            return "It's a tie";
+          } else if (computerSelection == "rock")
+          {
+            return "You lose rock beats scissors";
+          }
+        }
+      }
+
+function game(){
+  for(let i = 0; i < 5; i++){
+    let playerSelection = window.prompt("Choose rock, paper or scissors:").toLowerCase();
+const computerSelection = computerPlay();
+console.log(PlayRound(playerSelection,computerSelection));
+
+  }
+  
+  }
+
+
+game();
+      
+    </script>
+  </body>
+</html>
